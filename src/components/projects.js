@@ -43,7 +43,7 @@ function PortfolioProjects() {
         gap: 4,
         alignItems: 'center',
         padding: 4,
-        backgroundColor: '#F9F9FF', // Light background color for contrast
+        background: 'linear-gradient(90deg, #0D0D0D, #1A1A1A)',
       }}
     >
       {projects.map((project) => (
@@ -54,26 +54,26 @@ function PortfolioProjects() {
           >
             <Box
               sx={{
-                width: '75%', // Reduced the width slightly
-                maxWidth: 700, // Adjusted the maximum width
-                height: 270, // Adjusted height for balance
-                padding: 2, // Adds inner padding
+                width: '75%',
+                maxWidth: 700,
+                height: 270,
+                padding: 2,
                 backgroundImage: `url(${project.image})`,
-                backgroundSize: '75%', // Image is smaller than the box
+                backgroundSize: '75%',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                borderRadius: '16px', // Rounded corners for a modern look
-                border: '4px solid rgba(196, 176, 255, 0.8)', // Light purple border
+                borderRadius: '16px',
+                border: '4px solid #FF007C',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
+                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                backgroundColor: 'white', // Fallback color
+                backgroundColor: '#1A1A1A',
                 '&:hover': {
-                  transform: 'scale(1.05)', // Slight zoom effect on hover
-                  boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.2)', // Stronger shadow on hover
+                  transform: 'scale(1.05)',
+                  boxShadow: '0px 6px 16px rgba(255, 0, 124, 0.3)',
                 },
               }}
               onClick={() => handleProjectClick(project.id)}
@@ -81,9 +81,11 @@ function PortfolioProjects() {
               <Typography
                 variant="h5"
                 sx={{
-                  color: '#5A3E85',
                   textShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  background: 'linear-gradient(90deg, #FF007C, #FD7E00)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
                   padding: '8px 16px',
                   borderRadius: '8px',
                   fontWeight: 'bold',
@@ -101,29 +103,31 @@ function PortfolioProjects() {
                 maxWidth: 700,
                 padding: 3,
                 marginTop: 2,
-                backgroundColor: '#ffffff',
+                background: '#0D0D0D',
                 borderRadius: '16px',
-                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-                border: '2px solid rgba(196, 176, 255, 0.6)',
+                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.3)',
+                border: '2px solid #FD7E00',
               }}
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: 2, color: '#5A3E85' }}
+                sx={{ fontWeight: 'bold', marginBottom: 2, color: '#FF007C' }}
               >
                 Tools Used:
               </Typography>
-              <Typography variant="body1" sx={{ marginBottom: 3 }}>
+              <Typography variant="body1" sx={{ marginBottom: 3, color: '#f6f0f0' }}>
                 {project.tools}
               </Typography>
 
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: 2, color: '#5A3E85' }}
+                sx={{ fontWeight: 'bold', marginBottom: 2, color: '#FD7E00' }}
               >
                 Brief Description:
               </Typography>
-              <Typography variant="body1">{project.description}</Typography>
+              <Typography variant="body1" sx={{ color: '#f6f0f0' }}>
+                {project.description}
+              </Typography>
             </Box>
           </Collapse>
         </React.Fragment>
@@ -133,3 +137,4 @@ function PortfolioProjects() {
 }
 
 export default PortfolioProjects;
+

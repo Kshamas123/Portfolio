@@ -1,10 +1,29 @@
-import React from "react";
-import { motion } from "framer-motion"; // For animation
-import { ReactTyped } from "react-typed"; // Correct import for ReactTyped
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { ReactTyped } from "react-typed";
 import "./Intro.css";
 import myImage from "./my_image.jpg";
 
 function IntroSection() {
+  useEffect(() => {
+    const laserPointer = document.createElement("div");
+    laserPointer.className = "laser-pointer";
+    document.body.appendChild(laserPointer);
+
+    const handleMouseMove = (e) => {
+      const { clientX: x, clientY: y } = e;
+      laserPointer.style.left = `${x}px`;
+      laserPointer.style.top = `${y}px`;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.body.removeChild(laserPointer);
+    };
+  }, []);
+
   return (
     <div className="intro-container">
       {/* Text Section */}
@@ -18,7 +37,6 @@ function IntroSection() {
           Hello, I am <span className="highlight">Kshama S</span>
         </motion.h1>
 
-        {/* Typewriter Effect for "I am a Web Developer..." */}
         <motion.div
           className="about-me"
           initial={{ opacity: 0 }}
@@ -41,16 +59,17 @@ function IntroSection() {
           </p>
         </motion.div>
 
-        {/* Static black text for the rest */}
         <motion.div
           className="about-me-static"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 2 }}
         >
-          <p style={{ color: "black", fontFamily: "cursive" }}>
+          <p style={{ color: "#FF007C", fontFamily: "cursive" }}>
             I have a passion for building innovative solutions and continuously
-            enhancing my skills to solve real-world problems.Feel free to explore my portfolio and get in touch if you have any questions or if you'd like to collaborate on a project.
+            enhancing my skills to solve real-world problems. Feel free to
+            explore my portfolio and get in touch if you have any questions or
+            if you'd like to collaborate on a project.
           </p>
         </motion.div>
       </div>
@@ -77,6 +96,7 @@ function IntroSection() {
 }
 
 export default IntroSection;
+
 
 
 

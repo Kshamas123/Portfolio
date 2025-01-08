@@ -1,5 +1,3 @@
-
-
 /* Particle Background Effect */
 .intro-container::before {
     content: '';
@@ -13,13 +11,13 @@
     z-index: -1;
 }
 
-/* Intro Section */
+/* Intro Container */
 .intro-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #f4f4f9, #e0e0f8);
+    background: linear-gradient(90deg, #0D0D0D, #1A1A1A);
     padding: 0 2rem;
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -44,7 +42,7 @@
 /* Text Section */
 .text-section {
     width: 50%;
-    color: #333;
+    color: #FD2D00;
     text-align: left;
     padding: 20px;
     animation: fade-in 2s ease-in-out;
@@ -71,7 +69,7 @@
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     padding: 64px;
-    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+    background: linear-gradient(90deg, #FF007C, #FD7E00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 3s infinite linear;
@@ -89,24 +87,17 @@
     }
 }
 
-/* Highlight Text */
-.highlight {
-    color: #6a0dad;
-    font-weight: 700;
-}
-
 /* About Me Text */
 .about-me {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #555;
+    color: #FD2D00;
 }
 
-/* Dynamic Text Typing */
 .typed-text {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #8a2be2;
+    color: #FF007C;
     padding-top: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -119,17 +110,17 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    background: linear-gradient(90deg, #FF007C, #FD7E00);
     border: none;
     border-radius: 50px;
     text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+    box-shadow: 0 0 15px #FD7E00;
     transition: all 0.3s ease-in-out;
 }
 
 .cta-button:hover {
-    box-shadow: 0 0 30px rgba(138, 43, 226, 1);
+    box-shadow: 0 0 30px #FD7E00;
     transform: scale(1.05);
 }
 
@@ -141,46 +132,58 @@
     align-items: center;
     padding-right: 2rem;
     margin: 0 auto;
+    position: relative;
 }
 
-/* Rotating Border Animation */
+/* Rotating Border and Laser Effect */
 .circle-placeholder {
     width: 400px;
     height: 400px;
     max-width: 100%;
     border-radius: 50%;
-    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    background: linear-gradient(90deg, #FF007C, #FD7E00);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    border: 5px solid transparent;
-    animation: rotate-border 5s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 124, 0.5), 0 0 40px rgba(255, 0, 124, 0.3);
+    animation: rotate-border 5s linear infinite, float 4s ease-in-out infinite;
+    position: relative;
+}
+
+.circle-placeholder::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 0, 124, 0.7),
+        transparent
+    );
+    animation: laserMove 4s linear infinite;
+}
+
+/* Laser Beam Animation */
+@keyframes laserMove {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 @keyframes rotate-border {
     0% {
-        border-image: linear-gradient(90deg, #6a0dad, #8a2be2) 1;
         transform: rotate(0deg);
     }
     100% {
-        border-image: linear-gradient(90deg, #8a2be2, #6a0dad) 1;
         transform: rotate(360deg);
     }
-}
-
-.circle-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Floating Animation */
-.circle-placeholder {
-    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -193,6 +196,13 @@
     100% {
         transform: translateY(0);
     }
+}
+
+.circle-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 /* Responsive Design */
@@ -244,6 +254,30 @@
         padding: 8px 20px;
     }
 }
+.laser-pointer {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    /* background: radial-gradient(circle, #FF007C, transparent); */
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px #FF007C, 0 0 40px 10px rgba(255, 0, 124, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s linear;
+}
+/* Laser Line Canvas */
+.laser-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9998; /* Below cursor but above content */
+}
+
+
 
 
 

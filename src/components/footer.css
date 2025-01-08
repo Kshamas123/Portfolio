@@ -1,9 +1,9 @@
 /* Footer Gradient and Layout */
 .animated-footer {
-    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    background:linear-gradient(90deg, #FF007C, #FD7E00);
     animation: gradient-animation 5s infinite;
-    box-shadow: 0 -4px 15px rgba(138, 43, 226, 0.5);
-    color: #ffffff;
+    box-shadow: 0 -4px 15px rgba(251, 40, 180, 0.5);
+    color: #070707;
     text-align: center;
     padding: 10px 15px; /* Reduced padding for smaller height */
     box-sizing: border-box;
@@ -28,7 +28,7 @@
 
 /* Social Media Buttons */
 .animated-footer a {
-    color: #ffffff;
+    color: #0f0f0f;
     font-size: 1rem; /* Reduced font size */
     margin: 5px; /* Reduced margin */
     padding: 8px 10px; /* Reduced padding */
@@ -74,21 +74,21 @@
     margin: 8px; /* Reduced margin */
     font-size: 1rem; /* Reduced font size */
     font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    color: #0a0a0a;
+    background:linear-gradient(90deg, #FF007C, #FD7E00);
     border: none;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(138, 43, 226, 0.5);
+    box-shadow: 0 3px 8px #FD7E00;
 }
 
 .resume-download-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 12px rgba(138, 43, 226, 0.8);
-    background: linear-gradient(90deg, #8a2be2, #6a0dad);
+    box-shadow: 0 5px 12px #FD7E00;
+    background:linear-gradient(90deg, #FF007C, #FD7E00);
 }
 
 /* Footer Responsive Design */
