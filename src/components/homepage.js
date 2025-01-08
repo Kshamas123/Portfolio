@@ -65,7 +65,7 @@ function IntroSection() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 2 }}
         >
-          <p style={{ color: "#FF007C", fontFamily: "cursive" }}>
+          <p style={{ color: "#FF007C", fontFamily:"serif" }}>
             I have a passion for building innovative solutions and continuously
             enhancing my skills to solve real-world problems. Feel free to
             explore my portfolio and get in touch if you have any questions or
