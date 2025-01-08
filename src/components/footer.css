@@ -1,0 +1,125 @@
+/* Footer Gradient and Layout */
+.animated-footer {
+    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    animation: gradient-animation 5s infinite;
+    box-shadow: 0 -4px 15px rgba(138, 43, 226, 0.5);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 15px; /* Reduced padding for smaller height */
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    position: relative; /* For social media glow effect */
+    width: 100%; /* Ensure full width */
+}
+
+/* Footer Text Animation */
+.animated-footer-text {
+    font-size: 1rem; /* Reduced font size */
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    margin: 5px 0; /* Reduced margin */
+}
+
+.animated-footer-text:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+/* Social Media Buttons */
+.animated-footer a {
+    color: #ffffff;
+    font-size: 1rem; /* Reduced font size */
+    margin: 5px; /* Reduced margin */
+    padding: 8px 10px; /* Reduced padding */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+
+.animated-footer a:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+/* Glow Effect on Social Media Buttons */
+.animated-footer a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 215, 0, 0.5);
+    border-radius: 50%;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.animated-footer a:hover::before {
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+/* Resume Download Button */
+.resume-download-button {
+    display: inline-block;
+    padding: 8px 15px; /* Reduced padding */
+    margin: 8px; /* Reduced margin */
+    font-size: 1rem; /* Reduced font size */
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(138, 43, 226, 0.5);
+}
+
+.resume-download-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 12px rgba(138, 43, 226, 0.8);
+    background: linear-gradient(90deg, #8a2be2, #6a0dad);
+}
+
+/* Footer Responsive Design */
+@media (max-width: 768px) {
+    .animated-footer {
+        padding: 8px 10px; /* Further reduced padding */
+    }
+
+    .animated-footer-text {
+        font-size: 0.9rem; /* Smaller font size for smaller screens */
+    }
+
+    .animated-footer a {
+        font-size: 0.9rem;
+        padding: 6px 8px; /* Reduced padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-footer {
+        padding: 5px; /* Minimum padding for mobile devices */
+    }
+
+    .animated-footer-text {
+        font-size: 0.8rem; /* Smaller font size */
+    }
+
+    .animated-footer a {
+        font-size: 0.8rem;
+        padding: 5px 6px;
+    }
+}
+
+

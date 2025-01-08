@@ -1,0 +1,113 @@
+/* Navbar Gradient Animation */
+.animated-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    animation: gradient-animation 5s infinite;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Ensure full width */
+    padding: 10px 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradient-animation {
+    0% {
+        background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    }
+    50% {
+        background: linear-gradient(90deg, #8a2be2, #6a0dad);
+    }
+    100% {
+        background: linear-gradient(90deg, #6a0dad, #8a2be2);
+    }
+}
+
+/* Navbar Brand Animation */
+.animated-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.animated-brand:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+/* Nav Links Animation */
+.animated-link {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.animated-link:hover {
+    color: black;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Glow Effect on Hover */
+.animated-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    background: #ffd700;
+    transition: width 0.4s ease-in-out;
+}
+
+.animated-link:hover::before {
+    width: 100%;
+}
+
+/* NavBar Shadow and Scale on Hover */
+.animated-navbar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.7);
+}
+
+/* Navbar Responsive Design */
+@media (max-width: 768px) {
+    .animated-navbar {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .animated-brand {
+        font-size: 1.5rem;
+    }
+
+    .animated-link {
+        font-size: 1rem;
+        margin: 5px 0;
+        display: block; /* Stack links vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-navbar {
+        padding: 5px 10px;
+    }
+
+    .animated-brand {
+        font-size: 1.2rem;
+    }
+
+    .animated-link {
+        font-size: 0.9rem;
+    }
+}
+
