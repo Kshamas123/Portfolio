@@ -99,7 +99,7 @@
     font-weight: 600;
     color: #FF007C;
     padding-top: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /* Call-To-Action Button */
@@ -164,7 +164,7 @@
         rgba(255, 0, 124, 0.7),
         transparent
     );
-    animation: laserMove 4s linear infinite;
+
 }
 
 /* Laser Beam Animation */
