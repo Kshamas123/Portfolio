@@ -16,13 +16,13 @@
 /* Gradient Animation Keyframes */
 @keyframes gradient-animation {
     0% {
-        background: linear-gradient(90deg, #FF007C, #FD7E00);
+        background: linear-gradient(90deg, #FF0060, #FD7E00);
     }
     50% {
         background: linear-gradient(90deg, #FD7E00, #FF007C);
     }
     100% {
-        background: linear-gradient(90deg, #FF007C, #FD7E00);
+        background: linear-gradient(90deg, #FF0060, #FD7E00);
     }
 }
 
